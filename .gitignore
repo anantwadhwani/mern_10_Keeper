@@ -20,11 +20,6 @@ package-lock.json
 .env.test.local
 .env.production.local
 
-# server files
-/server/.env
-/server/node_modules
-/server/package-lock.json
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

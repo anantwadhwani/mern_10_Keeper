@@ -10,7 +10,7 @@ const App = () => {
 
   // Fetch notes from backend when the component mounts
   useEffect(() => {
-    axios.get("http://localhost:5000/notes")
+    axios.get("https://mern-10-keeper.onrender.com/notes")
       .then((res) => setNotes(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -21,14 +21,14 @@ const App = () => {
       alert("Both title and content are required!");
       return;
     }
-    axios.post("http://localhost:5000/notes", newNote)
+    axios.post("https://mern-10-keeper.onrender.com/notes", newNote)
       .then((res) => setNotes((prevNotes) => [...prevNotes, res.data]))
       .catch((err) => console.error(err));
   };
 
   // Delete a note
   const deleteNote = (id) => {
-    axios.delete(`http://localhost:5000/notes/${id}`)
+    axios.delete(`https://mern-10-keeper.onrender.com/notes/${id}`)
       .then(() => setNotes((prevNotes) => prevNotes.filter((note) => note._id !== id)))
       .catch((err) => console.error(err));
   };
